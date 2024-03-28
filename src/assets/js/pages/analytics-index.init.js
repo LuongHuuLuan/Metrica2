@@ -5,20 +5,20 @@
  */
 
 
-  var options = {
-    series: [{
-      name: 'New Visitors',
-      data: [68, 44, 55, 57, 56, 61, 58, 63, 60, 66]
-    }, {
-        name: 'Unique Visitors',
-        data: [51, 76, 85, 101, 98, 87, 105, 91, 114, 94]
-    },],
-    chart: {
-      height: 330,
-      type: 'bar',
-      toolbar: {
-          show: false
-      }
+var options = {
+  series: [{
+    name: 'New Visitors',
+    data: [68, 44, 55, 57, 56, 61, 58, 63, 60, 66]
+  }, {
+    name: 'Unique Visitors',
+    data: [51, 76, 85, 101, 98, 87, 105, 91, 114, 94]
+  },],
+  chart: {
+    height: 330,
+    type: 'bar',
+    toolbar: {
+      show: false
+    }
   },
   plotOptions: {
     bar: {
@@ -38,57 +38,54 @@
   },
   colors: ["#1ccab8", '#2a76f4'],
   xaxis: {
-    categories: ['Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
     axisBorder: {
       show: true,
       color: '#bec7e0',
-    },  
+    },
     axisTicks: {
       show: true,
       color: '#bec7e0',
-    },    
+    },
   },
   yaxis: {
     title: {
-        text: 'Visitors',
+      text: 'Visitors',
     },
   },
   fill: {
-      opacity: 1,
+    opacity: 1,
   },
   // legend: {
   //     floating: true
   // },
   grid: {
     row: {
-        colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
-        opacity: 0.2,           
+      colors: ['transparent', 'transparent'], // takes an array which will be repeated on columns
+      opacity: 0.2,
     },
     strokeDashArray: 2.5,
   },
   tooltip: {
-      y: {
-          formatter: function (val) {
-              return "" + val + "k"
-          }
+    y: {
+      formatter: function (val) {
+        return "" + val + "k"
       }
+    }
   }
 };
 
-  var chartMain = new ApexCharts(document.querySelector("#ana_dash_1"), options);
-
-
-
+var chartMain = new ApexCharts(document.querySelector("#ana_dash_1"), options);
 
 
 //Device-widget
 
- 
+
 var options = {
   chart: {
-      height: 255,
-      type: 'donut',
-  }, 
+    height: 255,
+    type: 'donut',
+  },
   plotOptions: {
     pie: {
       donut: {
@@ -105,7 +102,7 @@ var options = {
     width: 2,
     colors: ['transparent']
   },
- 
+
   series: [50, 25, 25,],
   legend: {
     show: true,
@@ -117,33 +114,33 @@ var options = {
     offsetX: 0,
     offsetY: 0,
   },
-  labels: [ "Mobile","Tablet", "Desktop" ],
-  colors: ["#2a76f4","rgba(42, 118, 244, .5)","rgba(42, 118, 244, .18)"],
- 
+  labels: ["Mobile", "Tablet", "Desktop"],
+  colors: ["#2a76f4", "rgba(42, 118, 244, .5)", "rgba(42, 118, 244, .18)"],
+
   responsive: [{
-      breakpoint: 600,
-      options: {
-        plotOptions: {
-            donut: {
-              customScale: 0.2
-            }
-          },        
-          chart: {
-              height: 240
-          },
-          legend: {
-              show: false
-          },
-      }
+    breakpoint: 600,
+    options: {
+      plotOptions: {
+        donut: {
+          customScale: 0.2
+        }
+      },
+      chart: {
+        height: 240
+      },
+      legend: {
+        show: false
+      },
+    }
   }],
   tooltip: {
     y: {
-        formatter: function (val) {
-            return   val + " %"
-        }
+      formatter: function (val) {
+        return val + " %"
+      }
     }
   }
-  
+
 }
 
 var chart = new ApexCharts(
@@ -152,10 +149,9 @@ var chart = new ApexCharts(
 );
 
 
-
 // traffice chart
-  
-  
+
+
 var optionsCircle = {
   chart: {
     type: 'radialBar',
@@ -165,7 +161,7 @@ var optionsCircle = {
   },
   plotOptions: {
     radialBar: {
-      inverseOrder: true,      
+      inverseOrder: true,
       hollow: {
         margin: 5,
         size: '55%',
@@ -181,13 +177,13 @@ var optionsCircle = {
 
       dataLabels: {
         name: {
-            fontSize: '18px',
+          fontSize: '18px',
         },
         value: {
-            fontSize: '16px',
-            color: '#50649c',
+          fontSize: '16px',
+          color: '#50649c',
         },
-        
+
       }
     },
   },
@@ -202,16 +198,14 @@ var optionsCircle = {
       return val + " - " + opts.w.globals.series[opts.seriesIndex] + '%'
     }
   },
-  
+
   stroke: {
     lineCap: 'round'
   },
-  colors: ["#2a76f4","#38c4fa"],
+  colors: ["#2a76f4", "#38c4fa"],
 }
 
 var chartCircle = new ApexCharts(document.querySelector('#circlechart'), optionsCircle);
-
-
 
 
 var iteration = 11
@@ -229,7 +223,7 @@ window.setInterval(function () {
 
   iteration++;
 
-  chartCircle.updateSeries([getRangeRandom({ min: 10, max: 100 }), getRangeRandom({ min: 10, max: 100 })])
+  chartCircle.updateSeries([getRangeRandom({min: 10, max: 100}), getRangeRandom({min: 10, max: 100})])
 
 
 }, 3000)

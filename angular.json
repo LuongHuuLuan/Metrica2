@@ -32,16 +32,12 @@
             "styles": [
               "src/assets/scss/bootstrap.scss",
               "src/assets/scss/icons.scss",
+              "node_modules/apexcharts/dist/apexcharts.css",
               "src/assets/scss/app.scss",
               "src/styles.scss"
             ],
             "scripts": [
-              "src/assets/js/jquery.min.js",
-              "src/assets/js/bootstrap.bundle.min.js",
-              "src/assets/js/simplebar.min.js",
-              "src/assets/js/feather.min.js",
-              "src/assets/libs/apexcharts/apexcharts.min.js",
-              "src/assets/js/app.js"
+              "node_modules/apexcharts/dist/apexcharts.min.js"
             ]
           },
           "configurations": {
