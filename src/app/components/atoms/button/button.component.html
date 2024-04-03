@@ -1,0 +1,16 @@
+@switch (tag) {
+  @case ("button") {
+    <button [type]="type" [class]="getClass()" (click)="onClickButton($event)" [disabled]="disable">
+      <ng-content select="[app-button-content]"/>
+    </button>
+  }
+  @case ("input") {
+    <input [type]="type" [class]="getClass()" (click)="onClickButton($event)" [disabled]="disable" [value]="value"/>
+
+  }
+  @case ("link") {
+    <a [type]="type" role="button" [class]="getClass()" (click)="onClickButton($event)" [href]="href">
+      <ng-content select="[app-button-link]"/>
+    </a>
+  }
+}

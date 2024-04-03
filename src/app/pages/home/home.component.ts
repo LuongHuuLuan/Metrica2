@@ -1,5 +1,4 @@
 import {AfterViewInit, Component} from '@angular/core';
-import {LeftSideBarTabComponent} from "../../components/organism/left-side-bar-tab/left-side-bar-tab.component";
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -7,9 +6,8 @@ import {
   ApexPlotOptions, ApexResponsive, ApexStroke, ApexTooltip, ApexXAxis, ApexYAxis,
   NgApexchartsModule
 } from "ng-apexcharts";
-import {TopBarComponent} from "../../components/organism/top-bar/top-bar.component";
-import {RightSideBarComponent} from "../../components/organism/right-side-bar/right-side-bar.component";
 import {FooterComponent} from "../../components/organism/footer/footer.component";
+import {HorizontalNavComponent} from "../../components/organism/horizontal-nav/horizontal-nav.component";
 
 export type ChartBaseOptions = {
   chart: ApexChart,
@@ -44,23 +42,15 @@ export type ChartDeviceOption = {
   selector: 'app-home',
   standalone: true,
   imports: [
-    LeftSideBarTabComponent,
     NgApexchartsModule,
-    TopBarComponent,
-    RightSideBarComponent,
-    FooterComponent
+    FooterComponent,
+    HorizontalNavComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements AfterViewInit {
   title = 'Metrica2';
-  srcScripts = [
-    "/assets/js/bootstrap.bundle.min.js",
-    "/assets/js/simplebar.min.js",
-    "/assets/js/feather.min.js",
-    "/assets/js/app.js"
-  ]
   // @ViewChild(ChartComponent) chart!: ChartComponent;
   chartMain!: ChartMainOption;
   chartDevice!: ChartDeviceOption;
@@ -74,10 +64,8 @@ export class HomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    this.srcScripts.forEach(srcScript => this.loadScript(srcScript))
 
-
-    var iteration = 11
+    let iteration = 11
 
     function getRangeRandom(yrange: { max: number, min: number }) {
       return Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min
@@ -91,12 +79,6 @@ export class HomeComponent implements AfterViewInit {
 
 
     }, 3000)
-  }
-
-  loadScript(scriptUrl: string) {
-    const script = document.createElement('script');
-    script.src = scriptUrl;
-    document.body.appendChild(script);
   }
 
   initChartMain() {

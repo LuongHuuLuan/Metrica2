@@ -37,7 +37,11 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/apexcharts/dist/apexcharts.min.js"
+              "src/assets/js/bootstrap.bundle.min.js",
+              "src/assets/js/simplebar.min.js",
+              "src/assets/js/feather.min.js",
+              "node_modules/apexcharts/dist/apexcharts.min.js",
+              "src/assets/js/app.js"
             ]
           },
           "configurations": {
